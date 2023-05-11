@@ -41,7 +41,7 @@ const confirmDelBatch = () => {
   if (!multipleSelection.value || !multipleSelection.value.length) {
     ElMessage.warning("请选择数据")
     return
-  }m
+  }
   const idArr = multipleSelection.value.map(v => v.id)
   request.post('/order/del/batch', idArr).then(res => {
     if (res.code === '200') {

@@ -46,7 +46,7 @@
   >
     <el-icon class="el-icon--upload"><upload-filled /></el-icon>
     <div class="el-upload__text">
-      上传图片到这里<em>文字识别</em>
+      上传图片到这里<em>车牌识别</em>
     </div>
   </el-upload>
 </template>

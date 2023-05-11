@@ -285,7 +285,7 @@ const getNameById = (id) => {
           <el-input v-model="state.form.carNumber" autocomplete="off"></el-input>
         </el-form-item>
 
-        <el-form-item prop="parking" label="停车场  : ">
+        <el-form-item prop="parking" label="停车场">
           <el-select clearable v-model="state.form.pid" placeholder="请选择停车场">
             <el-option v-for="item in state.parking" :key="item.value" :label="item.label" :value="item.value" />
           </el-select>

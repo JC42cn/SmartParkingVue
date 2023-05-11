@@ -236,11 +236,6 @@ const getNameById = (id) => {
         </el-icon>  <span style="vertical-align: middle"> 新增 </span>
       </el-button>
 
-      <el-button type="primary" @click="exportData" class="ml5" v-if="auths.includes('parkingSpace.export')">
-        <el-icon style="vertical-align: middle">
-          <Top />
-        </el-icon>  <span style="vertical-align: middle"> 导出 </span>
-      </el-button>
       <el-popconfirm title="您确定删除吗？" @confirm="confirmDelBatch" v-if="auths.includes('parkingSpace.deleteBatch')">
         <template #reference>
           <el-button type="danger" style="margin-left: 5px">

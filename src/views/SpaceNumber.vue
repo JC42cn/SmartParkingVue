@@ -86,15 +86,12 @@ const load = () => {
     }).then(res => {
       state.tableData = res.data.records
       total.value = res.data.total
-
     })
-
-
 }
 load()  // 调用 load方法拿到后台数据
 
 const reset = () => {
-  name.value = ''
+  state.form.parking =0
   load()
 }
 
@@ -207,9 +204,11 @@ const addbookings = (row) => {
     if (res.code==='200' || res.code===200){
     ElMessage.success(res.data)
     }else if (res.code==='800' || res.code===800){
-      ElMessage.error(res.data)
+      ElMessage.error(res.msg)
     }
+    state.form.parking=0
     load()
+    state.form.parking = ''
   })
 }
 
@@ -220,8 +219,9 @@ const cancelbookings = (row) => {
     }else {
       ElMessage.error("取消失败")
     }
-
+state.form.parking=0
     load()
+    state.form.parking = ''
   })
 }
 let timer
@@ -302,12 +302,9 @@ const startTimer = (row) => {
           </template>
         </el-table-column>
 
-        <el-table-column label="操作" width="300">
+        <el-table-column label="操作" width="180">
           <template #default="scope">
             <el-button type="success" @click="addbookings(scope.row)" v-if="scope.row.state === 0">预约</el-button>
-            <el-button type="danger" @click="cancelbookings(scope.row)" v-if="scope.row.state === 2">取消预约</el-button>
-            <el-button type="info" @click="startTimer(scope.row)" v-if="scope.row.state===2">查看剩余时间</el-button>
-
           </template>
 
         </el-table-column>

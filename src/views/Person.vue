@@ -18,7 +18,8 @@ const handleImportSuccess = (res) => {
   ElMessage.success("上传头像成功")
 }
 
-let $myEmit = defineEmits(['getAvatar'])
+let $myEmit = defineEmits(['' +
+''])
 
 const save = () => {
   request.put("/user/updateUser", state.form).then(res => {
